@@ -1,10 +1,28 @@
-let moviename:string="transformers";
-let movierating:number=4.5;
-let isreleased:boolean=true;
-function displayMovieDetails(name:string,rating:number):string{
-    return `Movie: ${name} was rated Rating: ${rating}.`;
+class BankBranch {
+    public static readonly bankName: string = "canara bank";
+    public static totalAccountsCreated: number = 0;
+    public readonly accountNumber: string;
+    public accountHolder: string;
+    constructor(name: string, accNo: string) {
+        this.accountHolder = name;
+        this.accountNumber = accNo;
+        BankBranch.totalAccountsCreated++;
+    }
+    public static getBankPolicy(): void {
+        console.log(
+            `Welcome to ${this.bankName}. All FDs are subject to market risks.`
+        );
+    }
+    public showAccount(): void {
+        console.log(`Holder: ${this.accountHolder}`);
+        console.log(`Acc No: ${this.accountNumber}`);
+    }
 }
-let leadactors:string[]=["steve","mille","optimus prime"];
-const summary:string=displayMovieDetails(moviename,movierating);
-console.log(summary);
-console.log("Lead actors are -->",leadactors);
+console.log(BankBranch.bankName);
+BankBranch.getBankPolicy();
+const user1 = new BankBranch("shreya Raina", "HDFC000123");
+const user2 = new BankBranch("Ruru.", "HDFC000456");
+console.log(user1.accountNumber);
+console.log(
+    `Total Accounts in System: ${BankBranch.totalAccountsCreated}`
+);
