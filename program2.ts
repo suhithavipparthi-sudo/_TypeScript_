@@ -1,11 +1,14 @@
-let flexiblevalue:any=10;
-flexiblevalue="Now Im a string";
-flexiblevalue=true;
-let mysteryvalue:unknown="Hello shreya";
-if(typeof mysteryvalue==="string"){
-    console.log("Length of unknown string is -->"+mysteryvalue.length);
+function calculateTotalTraditional(price: number, taxRate: number): number {
+    return price + (price * taxRate);
 }
-function lognotification(message:string):void{
-    console.log("alert:"+message);
-}
-lognotification("Environment Setupm Complete!");
+const calculateTotalArrow = (price: number, taxRate: number): number => {
+    return price + (price * taxRate);
+};
+const getWelcomeMessage = (theatre: string): string => `Welcome to ${theatre} Cinemas!`;
+const ticketPrice: number = 250;
+const gstRate: number = 0.18;
+console.log(getWelcomeMessage("PVR"));
+const total1 = calculateTotalTraditional(ticketPrice, gstRate);
+console.log(`Total (Traditional): ${total1}`);
+const total2 = calculateTotalArrow(ticketPrice, gstRate);
+console.log(`Total (Arrow): ${total2}`);
